@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hangman!</title>
+    <script src=""</script>
+
+
+</head>
+
+
+
+<body>
+    <h1>HANGMAN!</h1>
+
+
+    <script>
+
+       
+
+            let name = prompt("What's your name?");
+                console.log("Hello " + name);
+    
+                //Create an array of words
+                let words = [
+                    "macho",
+                    "hulk",
+                    "warrior",
+                    "giant",
+                    "hawk",
+                    "animal",
+                    "piper"
+                ];
+    
+                //Pick a random word
+                let word = words[Math.floor(Math.random() * words.length)];
+    
+                //Set up the answerArraylet answerArray =[];
+                let answerArray = [];
+            for (let i = 0; i < word.length; i++) {
+                    answerArray[i] = "_";
+
+                }
+    
+                let remainingLetters = word.length;
+    
+                //The game loop
+    
+            while (remainingLetters > 0) {
+                    //Show the player their progress alert(answerArray.join(" "));
+
+                    alert(answerArray.join(" "));
+
+                let wrongGuesses = [];
+                
+                
+    
+
+                //Get a guess from the player
+
+                let guess = prompt("Guess a letter, or click Cancel to stop playing.");
+                if (guess === null) {
+                    //Exit the game loop
+                    break;
+                } else if (guess.length !== 1) {
+                    alert("Please enter a single letter.");
+                } else {
+                    //Update the game state with the guess
+
+                    for (let j = 0; j < word.length; j++) {
+                        if (word[j] === guess) {
+                    answerArray[j] = guess;
+                remainingLetters--;
+            }
+        }
+
+    }
+    //The end of the game loop
+}
+// Show the answer and congratulate the player
+
+
+alert("Good job! The answer was " + word);
+
+//Write your functions here
+
+
+
+
+            let pickWord = function () {
+                    // Return a random word
+                };
+    
+    
+            let setupAnswerArray = function (_word) {
+                    //Return the answer array
+                };
+            let showPlayerProgress = function (answerArray) {
+                    // Use alert to show the player their progress
+                };
+    
+            let getGuess = function () {
+                    //Use prompt to get guess
+                };
+    
+            let updateGameState = function (guess, word, answerArray) {
+                    //Update answerArray and return a number showing how many times the guess appears in the word so remainingLetters can be updated
+                };
+    
+            let showAnswerAndCongratulatePlayer = function (answerArray) {
+                    //Use alert to show the answer and congratulate the player
+                };
+    
+            while (remainingLetters > 0) {
+
+                    let guess = getGuess();
+                if (guess === null) {
+                    break;
+                } {
+                    alert("Please enter a single letter.");
+                }
+            }
+
+            showAnswerAndCongratulatePlayer(answerArray)
+
+    </script>
+
+</body>
+
+</html>
